@@ -34,7 +34,7 @@ func NewHook(levels ...logrus.Level) *Hook {
 		},
 	}
 	if len(hook.levels) == 0 {
-		hook.levels = logrus.AllLevels
+		hook.levels = []logrus.Level{logrus.PanicLevel, logrus.FatalLevel, logrus.ErrorLevel, logrus.WarnLevel, logrus.InfoLevel, logrus.DebugLevel}
 	}
 
 	return &hook
